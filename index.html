@@ -90,7 +90,7 @@ animation:float 6s linear infinite;
 <body>
 
 <!-- MUSIC -->
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="auto">
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
@@ -158,10 +158,20 @@ animation:float 6s linear infinite;
 </div>
 
 <script>
-
 function showMessage(){
-document.getElementById("msg").style.display="block";
-document.getElementById("bgMusic").play();
+  document.getElementById("msg").style.display="block";
+
+  var music = document.getElementById("bgMusic");
+
+  music.muted = false;
+
+  music.play().then(()=>{
+    console.log("Music playing");
+  }).catch(()=>{
+    music.muted = true;
+    music.play();
+    music.muted = false;
+  });
 }
 
 var images=[
