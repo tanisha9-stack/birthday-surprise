@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Anu ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(45deg,#ff758c,#ff7eb3);
+text-align:center;
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+margin-top:40px;
+padding:20px;
+}
+
+.slider{
+width:260px;
+height:300px;
+margin:auto;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* videos horizontal */
+.videos{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.videos video{
+width:220px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+button{
+margin-top:25px;
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+}
+
+.message{
+display:none;
+margin-top:30px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+font-size:18px;
+line-height:1.7;
+}
+
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:24px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-100vh);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>Happy Birthday Anu ❤️</h1>
+<h3>From Om</h3>
+
+<!-- PHOTO SLIDER -->
+<div class="slider">
+<img id="slide" src="photo1.jpg">
+</div>
+
+<!-- VIDEOS BELOW PHOTO -->
+<div class="videos">
+
+<video controls>
+<source src="video1.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video2.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video3.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<br>
+
+<button onclick="showMessage()">Open Your Surprise 🎁</button>
+
+<div class="message" id="msg">
+
+<p>Yaar tu aur main badminton court me mile the aur mujhe bilkul idea nahi tha ki us din ke baad tu meri life ka itna important part ban jayegi.</p>
+
+<p>Tere se bina baat kiye mera din complete hi nahi hota. Lagta hai jaise kuch missing hai jab tak teri awaaz na sunu.</p>
+
+<p>Teri choti choti baaton pe chidna aur fir tujhe manana mujhe bahut accha lagta hai. Tu bolti hui hi achi lagti hai, tera chup hona mujhe bilkul pasand nahi.</p>
+
+<p>Tu jaisi hai waise hi rehna, apna soft nature kabhi change mat karna.</p>
+
+<p>Aur haan ek din tujhe bike aur car chalana bhi sikhaunga. Bullet wali story abhi bhi yaad karke hasi aa jati hai 😂</p>
+
+<p>Tu mere liye sirf dost nahi hai, tu ek bahut special person hai meri life me.</p>
+
+<p>Aur haan ek promise kar… Scooty dhyaan se chalana aur time se ghar pahunchna. Bas isliye bol raha hu kyunki mujhe teri bahut fikr hai.</p>
+
+<h2>Happy Birthday Anu ❤️🧿</h2>
+
+<p>Aaj ka din bahut special hai kyunki aaj ke din tu is duniya me aayi thi. Aur meri life me bhi ek special jagah bana li hai tune.</p>
+
+<p>Kabhi bhi meri zarurat pade bas ek call kar dena. Main hamesha tere saath khada milunga.</p>
+
+<p>Rao Sahab hai… Ek baar jis par dil aa jaye na, phir usse kabhi chhodte nahi.</p>
+
+<h3>Happiest Birthday Once Again ANU ❤️</h3>
+
+<p>— Om</p>
+
+</div>
+
+</div>
+
+<script>
+
+function showMessage(){
+document.getElementById("msg").style.display="block";
+}
+
+var images=[
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg"
+];
+
+var i=0;
+
+function slideShow(){
+document.getElementById("slide").src=images[i];
+i++;
+if(i>=images.length){i=0;}
+}
+
+setInterval(slideShow,2000);
+
+setInterval(function(){
+
+var heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},6000);
+
+},300);
+
+</script>
+
+</body>
+</html>
